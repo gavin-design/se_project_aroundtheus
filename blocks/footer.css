@@ -1,8 +1,8 @@
 .footer {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.2;
-  color: #545454;
-  margin-top: 30px;
-  margin-bottom: 40px;
+  color: rgba(84, 84, 84, 1);
+  margin-top: 67px;
+  margin-bottom: 60px;
 }
