@@ -13,20 +13,16 @@
   margin-right: 24px;
 }
 .profile__info {
-  /* display: grid; */
-  /* gap: 7px 18px; */
-  /* grid-template-areas: "title button" "description description"; */
-  /* grid-template-columns: minmax(auto, 373px) auto; */
+  display: grid;
+  gap: 7px 18px;
+  grid-template-areas: "title button" "description description";
+  grid-template-columns: minmax(auto, 373px) auto;
 }
 .profile__title {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   font-size: 42px;
   line-height: 48px;
   font-weight: 500;
-  /* grid-area: title; */
+  grid-area: title;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -38,7 +34,7 @@
   line-height: 22px;
   font-weight: 400;
   max-width: 282px;
-  /* grid-area: description; */
+  grid-area: description;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -47,11 +43,9 @@
 .profile__edit-button {
   padding-right: 40px;
   align-self: flex-end;
-  /* grid-area: button; */
   background: transparent url(../images/edit-button.svg) center no-repeat;
   height: 24px;
   width: 24px;
-  /* grid-area: button; */
   border-style: none;
 }
 .profile__edit-button:hover {
@@ -99,28 +93,35 @@
     border-top: 1px solid rgba(84, 84, 84, 1);
   }
   .profile__title {
-    display: flex;
-    justify-content: center;
-    font-size: 14px;
+    text-overflow: clip;
+    font-size: 22px;
     line-height: 1.2;
     font-weight: 500;
+    max-width: 200px;
     grid-area: title;
     margin: 0;
   }
+  .profile__description {
+    max-width: 75px;
+    text-overflow: clip;
+  }
   .profile__info {
     display: flex;
-    padding-top: 26px;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    padding-top: 26px;
     max-width: 282px;
   }
   .profile__add-button {
     height: 50px;
-    width: 100%;
+    width: 282px;
     justify-content: center;
   }
   .profile__edit-button {
     width: 18px;
     height: 18px;
+    border: 1px solid white;
+    padding: 0;
   }
 }
