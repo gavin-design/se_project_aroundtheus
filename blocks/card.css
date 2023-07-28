@@ -25,7 +25,7 @@
   max-width: 220px;
   font-size: 24px;
   font-weight: 900;
-  line-height: 29px;
+  line-height: 1.2;
   color: #000;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -39,6 +39,6 @@
   border: none;
 }
 .card__like-button:hover {
-  opacity: 0.6000000238418579;
+  opacity: 0.5;
   cursor: pointer;
 }

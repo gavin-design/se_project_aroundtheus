@@ -7,6 +7,8 @@
 - Images
 
 **Intro**
+The technologies I used are HTML, CSS,flexbox, grid, and adaptive web design.
+It's an inter-active gallery of places of interest in the USA
 
 This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
 

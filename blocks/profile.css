@@ -1,8 +1,8 @@
 .profile {
   display: flex;
   align-items: center;
-  padding-top: 40px;
-  border-top: 1px solid rgba(84, 84, 84, 1);
+  padding-top: 36px;
+  border-top: 1px solid rgba(84, 84, 84, 0.69);
 }
 .profile__image {
   width: 120px;
@@ -16,7 +16,7 @@
   display: grid;
   gap: 7px 18px;
   grid-template-areas: "title button" "description description";
-  grid-template-columns: minmax(auto, 373px) auto;
+  grid-template-columns: minmax(auto, 375px) auto;
 }
 .profile__title {
   font-size: 42px;
@@ -46,6 +46,7 @@
   background: transparent url(../images/edit-button.svg) center no-repeat;
   height: 24px;
   width: 24px;
+  border: 2px solid white;
   border-style: none;
 }
 .profile__edit-button:hover {
@@ -60,6 +61,7 @@
   border-style: none;
   border: 2px solid white;
   margin-left: auto;
+  border-radius: 2px;
 }
 .profile__add-button:hover {
   opacity: 0.6000000238418579;
@@ -90,10 +92,9 @@
     padding-left: 0;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid rgba(84, 84, 84, 1);
+    border-top: 1px solid rgba(84, 84, 84, 0.69);
   }
   .profile__title {
-    text-overflow: clip;
     font-size: 22px;
     line-height: 1.2;
     font-weight: 500;
@@ -102,8 +103,9 @@
     margin: 0;
   }
   .profile__description {
-    max-width: 75px;
-    text-overflow: clip;
+    max-width: 100px;
+    font-size: 14px;
+    line-height: 1.2;
   }
   .profile__info {
     display: flex;
@@ -114,9 +116,9 @@
     max-width: 282px;
   }
   .profile__add-button {
-    height: 50px;
     width: 282px;
     justify-content: center;
+    margin-bottom: 0;
   }
   .profile__edit-button {
     width: 18px;
