@@ -3,6 +3,7 @@
   font-size: 18px;
   line-height: 1.2;
   color: #545454;
+  max-width: 200px;
   margin-top: 67px;
   margin-bottom: 60px;
 }
@@ -13,5 +14,6 @@
   .footer__copywright {
     margin-top: 48px;
     margin-bottom: 36px;
+    margin-right: 0;
   }
 }

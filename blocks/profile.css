@@ -94,6 +94,9 @@
     flex-direction: column;
     border-top: 1px solid rgba(84, 84, 84, 0.69);
   }
+  .profile__image {
+    margin-right: 0;
+  }
   .profile__title {
     font-size: 22px;
     line-height: 1.2;
