@@ -46,7 +46,6 @@
   background: transparent url(../images/edit-button.svg) center no-repeat;
   height: 24px;
   width: 24px;
-  border: 2px solid white;
   border-style: none;
 }
 .profile__edit-button:hover {
@@ -90,9 +89,7 @@
 @media screen and (max-width: 480px) {
   .profile {
     padding-left: 0;
-    display: flex;
     flex-direction: column;
-    border-top: 1px solid rgba(84, 84, 84, 0.69);
   }
   .profile__image {
     margin-right: 0;
@@ -100,7 +97,6 @@
   .profile__title {
     font-size: 22px;
     line-height: 1.2;
-    font-weight: 500;
     max-width: 200px;
     grid-area: title;
     margin: 0;

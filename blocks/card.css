@@ -2,23 +2,20 @@
   display: flex;
   align-content: flex-start;
   flex-direction: column;
-  flex-wrap: wrap;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .card__image {
-  width: 282px;
-  height: 282px;
-  list-style-type: none;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  min-height: 282px;
+  max-height: 282px;
+  object-fit: cover;
 }
 .card__description {
   display: flex;
   background-color: white;
   align-items: center;
   justify-content: space-between;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 25px 20px 25px 20px;
+  padding: 25px 15px 31px 21px;
   color: #000;
 }
 .card__title {
