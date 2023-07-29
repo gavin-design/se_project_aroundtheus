@@ -83,13 +83,15 @@
     line-height: 32px;
   }
   .profile__info {
-    max-width: 350px;
+    max-width: 400px;
   }
 }
 @media screen and (max-width: 480px) {
   .profile {
     padding-left: 0;
     flex-direction: column;
+    width: calc(100% + 40px);
+    margin: -20px;
   }
   .profile__image {
     margin-right: 0;

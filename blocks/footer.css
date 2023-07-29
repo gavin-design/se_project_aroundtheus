@@ -8,9 +8,6 @@
   margin-bottom: 60px;
 }
 @media screen and (max-width: 480px) {
-  .footer {
-    margin-left: 20px;
-  }
   .footer__copywright {
     font-size: 14px;
     margin-top: 48px;
