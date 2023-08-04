@@ -32,5 +32,3 @@ const initialCards = [
   cardData5,
   cardData6,
 ];
-
-console.log(initialCards);
