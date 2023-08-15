@@ -40,7 +40,11 @@
               program at Practicum. It was created using HTML and CSS, based on
               the design brief.
             </h1>
-            <button type="button" class="profile__edit-button"></button>
+            <button
+              type="button"
+              id="profile-edit-button"
+              class="profile__edit-button"
+            ></button>
 
             <p class="profile__description">
               Explorer This is the second project of the Web Development program
@@ -126,9 +130,9 @@
         <p class="footer__copywright">&copy; 2023 Gavin Broder</p>
       </footer>
     </div>
-    <div class="modal">
+    <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close"></button>
+        <button class="modal__close" id="profile-modal-closed-button"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form">
           <input
