@@ -51,7 +51,7 @@ function closePopup() {
   profileEditModal.classList.remove("modal_opened");
 }
 
-function getCardElement(cardData) {
+function getCardElement(data) {
   // Declare a getCardElement() function with one parameter named data.
   const cardElement = cardTemplate.cloneNode(true);
 
@@ -62,11 +62,10 @@ function getCardElement(cardData) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   // set the path to the image to the link field of the object
   // set the image alt text to the name field of the object
-  // cardImage.setAttribute("src", cardData.link);
-  // cardImage.setAttribute("alt", cardData.name);
-  cardImageEl.Content = cardData.card__image;
+
+  cardImageEl.src = data.link;
   // set the card title to the name field of the object, too
-  cardTitleEl.textContent = cardData.name;
+  cardTitleEl.textContent = data.name;
   // return the ready HTML element with the filled-in data
   return cardElement;
 }
@@ -93,8 +92,7 @@ profileModalClosedButton.addEventListener("click", closePopup);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
-initialCards.forEach((cardData) => {
-  // const card = initialCards;
-  const cardElement = getCardElement(cardData);
+initialCards.forEach((data) => {
+  const cardElement = getCardElement(data);
   cardListEl.append(cardElement);
 });
