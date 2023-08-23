@@ -39,7 +39,7 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+const profileEditForm = document.forms["profile-edit-form"];
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document
   .querySelector("#card-template")
@@ -64,6 +64,7 @@ function getCardElement(data) {
   // set the image alt text to the name field of the object
 
   cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
   // set the card title to the name field of the object, too
   cardTitleEl.textContent = data.name;
   // return the ready HTML element with the filled-in data
