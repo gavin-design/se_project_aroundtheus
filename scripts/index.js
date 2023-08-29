@@ -33,12 +33,22 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileModalClosedButton = document.querySelector(
   "#profile-modal-closed-button"
 );
+const addCardButton = document.querySelector("#add-card-button");
+const addCardModal = document.querySelector("#add-card-modal");
+const addCardModalClosedButton = document.querySelector(
+  "add-card-modal-closed-button"
+);
+/* -------------------------------------------------------------------------- */
+/*                               Add Card Button                              */
+/* -------------------------------------------------------------------------- */
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
+const addCardInput = document.querySelector("#add-card-title-input");
+const addCardImageInput = document.querySelector("#add-card-url-input");
 const profileEditForm = document.forms["profile-edit-form"];
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document
@@ -47,6 +57,8 @@ const cardTemplate = document
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
+// function openModal()
+
 function closePopup() {
   profileEditModal.classList.remove("modal_opened");
 }
@@ -92,6 +104,12 @@ profileEditButton.addEventListener("click", () => {
 profileModalClosedButton.addEventListener("click", closePopup);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+// Add-Card-Listener
+addCardButton.addEventListener("click", () => {
+  addCardInput.value = addCardTitle.textContent;
+  addCardImageInput.value = addCardImage.textContent;
+  addCardModal.classList.add("modal_opened");
+});
 
 initialCards.forEach((data) => {
   const cardElement = getCardElement(data);

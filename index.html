@@ -52,7 +52,11 @@
               design brief.
             </p>
           </div>
-          <button type="button" class="profile__add-button"></button>
+          <button
+            type="button"
+            class="profile__add-button"
+            id="add-card-button"
+          ></button>
         </section>
         <section class="cards page__section">
           <ul class="cards__list"></ul>
@@ -62,6 +66,33 @@
         <p class="footer__copywright">&copy; 2023 Gavin Broder</p>
       </footer>
     </div>
+    <!--Add-Card-Modal-->
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button class="modal__close" id="add-card-modal-closed-button"></button>
+        <p class="modal__heading">New Place</p>
+        <form class="modal__form" name="add-card-edit-form">
+          <input
+            type="text"
+            class="modal__input"
+            id="add-card-title-input"
+            name="title"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="text"
+            class="modal__input"
+            id="add-card-url-input"
+            name="new-place-url"
+            placeholder="Image link"
+            required
+          />
+          <button type="submit" class="modal__save-button">Create</button>
+        </form>
+      </div>
+    </div>
+    <!--Profile-Edtit-Modal-->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button class="modal__close" id="profile-modal-closed-button"></button>
