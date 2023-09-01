@@ -4,6 +4,7 @@
   flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 .card__image {
   min-height: 282px;
@@ -35,7 +36,20 @@
   height: 18px;
   border: none;
 }
+.card__like-button_active {
+  background-image: url(../images/likebutton_active.svg);
+}
 .card__like-button:hover {
   opacity: 0.5;
   cursor: pointer;
+}
+.card__delete-button {
+  width: 18px;
+  height: 19px;
+  color: rgba(255, 255, 255, 1);
+  background: transparent url(../images/Trash.svg) center no-repeat;
+  border: none;
+  position: absolute;
+  top: 18px;
+  right: 15px;
 }
