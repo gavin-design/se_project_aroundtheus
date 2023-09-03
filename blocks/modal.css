@@ -100,8 +100,9 @@
   }
   .modal__container {
     font-size: 14px;
-    max-width: 282px;
-    max-height: 322px;
+    width: 433px;
+    height: 540px;
+    flex-shrink: 0;
     padding: 22px;
   }
   .modal__heading {
@@ -109,5 +110,12 @@
   }
   .modal__input {
     width: 238px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .modal__container {
+    width: 240px;
+    height: 75vh;
+    flex-shrink: 0;
   }
 }
