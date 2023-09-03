@@ -10,7 +10,7 @@
   padding: 0 19px;
   opacity: 0;
   visibility: hidden;
-  transition: visibility 0s 06s, opacity 0.6s;
+  transition: visibility 0s 0.6s, opacity 0.6s;
 }
 
 .modal_opened {
