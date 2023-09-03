@@ -36,7 +36,7 @@
   height: 18px;
   border: none;
 }
-.card__like-button_active {
+.card__like-button-active {
   background-image: url(../images/likebutton_active.svg);
 }
 .card__like-button:hover {

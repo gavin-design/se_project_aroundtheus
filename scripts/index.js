@@ -50,9 +50,9 @@ const previewImageModalClosedButton = document.querySelector(
   "#preview-image-modal-closed-button"
 );
 const previewImageModalImg =
-  previewImageModal.querySelector(".modal__card_image");
+  previewImageModal.querySelector(".modal__card-image");
 const previewModalHeading = previewImageModal.querySelector(
-  ".preview__modal_heading"
+  ".preview__modal-heading"
 );
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
@@ -87,7 +87,7 @@ function getCardElement(data) {
   const deleteButton = cardElement.querySelector(".card__delete-button");
   const likeButton = cardElement.querySelector(".card__like-button");
   likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
+    likeButton.classList.toggle("card__like-button-active");
   });
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
