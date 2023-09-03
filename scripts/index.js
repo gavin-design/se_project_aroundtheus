@@ -52,7 +52,7 @@ const previewImageModalClosedButton = document.querySelector(
 const previewImageModalImg =
   previewImageModal.querySelector(".modal__card-image");
 const previewModalHeading = previewImageModal.querySelector(
-  ".preview__modal-heading"
+  ".modal__preview-heading"
 );
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
