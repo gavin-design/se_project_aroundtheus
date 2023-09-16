@@ -36,9 +36,10 @@
           />
           <div class="profile__info">
             <h1 class="profile__title">
-              Jacques Cousteau This is the second project of the Web Development
+              Jacques Cousteau
+              <!--  This is the second project of the Web Development
               program at Practicum. It was created using HTML and CSS, based on
-              the design brief.
+              the design brief. -->
             </h1>
             <button
               type="button"
@@ -47,9 +48,10 @@
             ></button>
 
             <p class="profile__description">
-              Explorer This is the second project of the Web Development program
+              Explorer
+              <!--  This is the second project of the Web Development program
               at Practicum. It was created using HTML and CSS, based on the
-              design brief.
+              design brief. -->
             </p>
           </div>
           <button
@@ -70,6 +72,7 @@
     <div class="modal" id="preview-image-modal">
       <div class="modal__preview-container">
         <button
+          type="button"
           class="modal__close"
           id="preview-image-modal-closed-button"
         ></button>
@@ -80,7 +83,11 @@
     <!--Add-Card-Modal-->
     <div class="modal" id="add-card-modal">
       <div class="modal__container">
-        <button class="modal__close" id="add-card-modal-closed-button"></button>
+        <button
+          type="button"
+          class="modal__close"
+          id="add-card-modal-closed-button"
+        ></button>
         <p class="modal__heading">New Place</p>
         <form class="modal__form" name="add-card-edit-form">
           <input
@@ -106,7 +113,11 @@
     <!--Profile-Edtit-Modal-->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="profile-modal-closed-button"></button>
+        <button
+          type="button"
+          class="modal__close"
+          id="profile-modal-closed-button"
+        ></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form" name="profile-edit-form">
           <input
@@ -115,16 +126,22 @@
             id="profile-title-input"
             name="title"
             placeholder="Name"
+            minlength="2"
+            maxlength="40"
             required
           />
+          <span class="modal__input_type_error"></span>
           <input
             type="text"
             class="modal__input"
             id="profile-description-input"
             name="description"
             placeholder="About Me"
+            minlength="2"
+            maxlength="200"
             required
           />
+          <span class="modal__input_type_error"></span>
           <button type="submit" class="modal__save-button">Save</button>
         </form>
       </div>
@@ -143,5 +160,6 @@
       </li>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
