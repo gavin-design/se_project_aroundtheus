@@ -20,6 +20,7 @@
 }
 
 .modal__container {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -108,6 +109,10 @@
   width: 358px;
   border: none;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.modal__input_type_error {
+  display: inline;
+  color: red;
 }
 @media screen and (max-width: 630px) {
   .modal__save-button {

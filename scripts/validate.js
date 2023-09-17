@@ -8,10 +8,8 @@ function setEventListeners(formEl, options) {
 function enableValidation(options) {
   const formEls = [...document.querySelectorAll(options.formSelector)];
   formEls.forEach((formEl) => {
-    formEl.addEventListener("submit", (e) => {
-      e.preventDefault();
-    });
-
+    formEl.addEventListener("input", (e) => {});
+    // console.log(inputEl.valdity.valid);
     setEventListeners(formEl, options);
     //look for all inputs side of form
     //loop through all the inputs to see if al are valid
@@ -27,7 +25,7 @@ function enableValidation(options) {
 }
 
 const config = {
-  formSelector: ".modal__container",
+  formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__save-button",
   inactiveButtonClass: "modal__save-button_disabled",

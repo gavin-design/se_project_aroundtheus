@@ -117,9 +117,11 @@ function renderCard(data, cardListEl) {
 
 function handleProfileEditFormSubmit(e) {
   e.preventDefault();
-
-  profileTitleInput.textContent = profileTitle.value;
+  profileTitleInput.textContent = profileTitleInput.value;
   profileDescriptionInput.textContent = profileDescription.value;
+
+  // profileTitle.value = profileTitleInput.textContent;
+  // profileDescription.value = profileDescriptionInput.textContent;
 
   closeModal(profileEditModal);
 }
@@ -143,8 +145,10 @@ profileEditForm.addEventListener("submit", handleProfileEditFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 profileEditButton.addEventListener("click", () => {
-  profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
+  profileTitleInput.textContent = profileTitle.value;
+  profileDescriptionInput.textContent = profileDescription.value;
+  // profileTitleInput.value = profileTitle.textContent;
+  // profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
 
