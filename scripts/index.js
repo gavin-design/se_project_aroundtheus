@@ -119,10 +119,11 @@ function handleProfileEditFormSubmit(e) {
   e.preventDefault();
   profileTitleInput.textContent = profileTitleInput.value;
   profileDescriptionInput.textContent = profileDescription.value;
+  profileTitle.textContent = profileTitleInput.value;
+  profileDescription.textContent = profileDescriptionInput.value;
 
-  // profileTitle.value = profileTitleInput.textContent;
-  // profileDescription.value = profileDescriptionInput.textContent;
-
+  console.log(profileTitleInput.value);
+  console.log(profileDescription.value);
   closeModal(profileEditModal);
 }
 function handleAddCardFormSubmit(e) {
@@ -147,8 +148,8 @@ addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.textContent = profileTitle.value;
   profileDescriptionInput.textContent = profileDescription.value;
-  // profileTitleInput.value = profileTitle.textContent;
-  // profileDescriptionInput.value = profileDescription.textContent;
+  profileTitleInput.value = profileTitle.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
 
