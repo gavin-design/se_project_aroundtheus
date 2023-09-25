@@ -35,24 +35,14 @@
             class="profile__image"
           />
           <div class="profile__info">
-            <h1 class="profile__title">
-              Jacques Cousteau
-              <!--  This is the second project of the Web Development
-              program at Practicum. It was created using HTML and CSS, based on
-              the design brief. -->
-            </h1>
+            <h1 class="profile__title">Jacques Cousteau</h1>
             <button
               type="button"
               id="profile-edit-button"
               class="profile__edit-button"
             ></button>
 
-            <p class="profile__description">
-              Explorer
-              <!--  This is the second project of the Web Development program
-              at Practicum. It was created using HTML and CSS, based on the
-              design brief. -->
-            </p>
+            <p class="profile__description">Explorer</p>
           </div>
           <button
             type="button"
@@ -98,6 +88,10 @@
             placeholder="Title"
             required
           />
+          <span
+            class="modal__input_type-visable-error"
+            id="add-card-title-input-error"
+          ></span>
           <input
             type="text"
             class="modal__input modal__input_type_url"
@@ -106,7 +100,17 @@
             placeholder="Image link"
             required
           />
-          <button type="submit" class="modal__save-button">Create</button>
+          <span
+            class="modal__input_type-visable-error"
+            id="add-card-url-input-error"
+          ></span>
+          <button
+            type="submit"
+            class="modal__save-button modal__save-button-disabled"
+            disabled
+          >
+            Create
+          </button>
         </form>
       </div>
     </div>
@@ -130,22 +134,35 @@
             minlength="2"
             required
           />
-          <span class="modal__input modal__input_type_error""></span>
+          <span
+            class="modal__input_type-visable-error"
+            id="profile-title-input-error"
+          ></span>
           <input
             type="text"
             class="modal__input"
             id="profile-description-input"
             name="description"
             placeholder="About Me"
-            maxlength="200" 
+            maxlength="200"
             minlength="2"
             required
           />
-          <span class="modal__input modal__input_type_error"></span>
-          <button type="submit" class="modal__save-button">Save</button>
+          <span
+            class="modal__input_type-visable-error"
+            id="profile-description-input-error"
+          ></span>
+          <button
+            type="submit"
+            class="modal__save-button modal__save-button-disabled"
+            disabled
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
+    <!-- Card Template -->
     <template id="card-template">
       <li class="card">
         <img src="" alt="" class="card__image" />
