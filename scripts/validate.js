@@ -61,7 +61,7 @@ const config = {
   submitButtonSelector: ".modal__save-button",
   inactiveButtonClass: "modal__save-button-disabled",
   inputErrorClass: "modal__input_type-error",
-  errorClass: "modal__input_type-visable-error",
+  errorClass: "modal__input-type-visable-error",
 };
 
 enableValidation(config);

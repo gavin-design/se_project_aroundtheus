@@ -135,6 +135,11 @@ function handlepreviewImage(e) {
   e.preventDefault();
   closeModal(previewImageModal);
 }
+function onKeydown(evt) {
+  if (evt.key === "Escape" || evt.keyCode === 27) {
+    closeModal();
+  }
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
@@ -142,6 +147,9 @@ function handlepreviewImage(e) {
 
 profileEditForm.addEventListener("submit", handleProfileEditFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
+
+profileEditForm.addEventListener("keydown", onKeydown);
+addCardFormElement.addEventListener("keydown", onKeydown);
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent.trim();
