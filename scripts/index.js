@@ -77,10 +77,32 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEsc);
 }
+
+// function handleEsc(evt) {
+//   if (evt.key === "Escape") {
+//     const openedModal = document.querySelector(".modal_opened");
+//     closeModal(openedModal);
+//     console.log(evt);
+//   }
+// }
+function handleMouseEvt(evt) {
+  if (evt === "onclick") {
+    modalBackground.addEventListener("click", closeModal);
+    //     evt.target.classList.contains(".modal");
+    console.log("click evt fired");
+    const modalBackground = document.querySelector(".modal");
+    //     closeModal(openedModal);
+    //     console.log("click");
+  }
+}
+// I created a  functon called handleMouseEvt
+// I tried to squeez the mouse event in here
+// the handleEsc and the keydown work ok
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEsc);
 }
+handleMouseEvt(".modal"); // where does this belong?
 
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -146,15 +168,6 @@ function handleEsc(evt) {
   }
 }
 
-function mouseEvt(evt) {
-  if (evt === "click") {
-    const modalBackground = document.querySelector(".modal__container");
-    modalBackground.addEventListener("click", closeModal);
-    closeModal(openedModal);
-    console.log("click");
-  }
-}
-
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
@@ -179,3 +192,53 @@ addCardModalClosedButton.addEventListener("click", () =>
 
 initialCards.forEach((data) => renderCard(data, cardListEl));
 const likeButtons = document.querySelectorAll(".card__like-button");
+
+/* -------------------------------------------------------------------------- */
+/*                                  QUESTIONS                                 */
+/* -------------------------------------------------------------------------- */
+/*1.
+ function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  document.removeEventListener (handleMouseEvt);
+} 
+   my best thinking has me wanting to do somthing like this up at the top of the page with the other functions
+   but then im afraid it's not DRY and i also have a problem just letting myself go and make a mess !
+   and when i try to figure out how we did this in the past i draw a blank  someone suggested i use this 
+   evt.target.classList.contains('modal') or something like it 
+   
+   What I'm hoping for is that you can guide me with a recipie if you will 
+   and I'll take a stab at it
+
+               MOUSE EVENT
+   
+   1. Identify the class you want to target .modal 
+   2. const modalBackground = document.querySelector(".modal");
+   3. create an eventlistener 
+   4. modalBackground.addEventListener("click", closeModal);
+   5. Try to log it to console
+   6.  evt.target.classList.contains(".modal");
+   7. console.log("click evt fired"); 
+   8. assign it to the opened modal???
+   9. */
+
+//  function handleMouseEvt(evt) {
+//   if (evt === "click") {
+//     modalBackground.addEventListener("click", closeModal);
+//     evt.target.classList.contains(".modal");
+//     console.log("click evt fired");
+//     const modalBackground = document.querySelector(".modal");
+
+//     closeModal(openedModal);
+//     console.log("click");
+//   }
+// }
+
+//  THIS IS THE FUNCTION OF  ESCAPE KEY SHOULD I USE THIS TO DO THE WORK FOR MY MOUSE?
+
+// function handleEsc(evt) {
+//   if (evt.key === "Escape") { switch this to "onclick"
+//     const openedModal = document.querySelector(".modal_opened");
+//     closeModal(openedModal);
+//     console.log(evt);
+//   }
+// }
