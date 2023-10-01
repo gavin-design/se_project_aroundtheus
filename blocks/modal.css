@@ -155,7 +155,6 @@
   .modal__container {
     font-size: 14px;
     width: 433px;
-    height: 540px;
     flex-shrink: 0;
     padding: 22px;
   }
@@ -169,7 +168,17 @@
 @media screen and (max-width: 320px) {
   .modal__container {
     width: 280px;
-    height: 75vh;
+    min-height: 150px;
+    max-height: 300px;
     flex-shrink: 0;
+  }
+  .modal__input_type-error {
+    border-bottom: 1px solid red;
+  }
+  .modal__save-button {
+    margin-top: 0px;
+    max-width: 238px;
+    font-size: 14px;
+    height: 46px;
   }
 }

@@ -52,7 +52,6 @@ const profileModalClosedButton = profileEditModal.querySelector(
 /* -------------------------------------------------------------------------- */
 /*                               Add Card Button                              */
 /* -------------------------------------------------------------------------- */
-// const deleteButtons = document.querySelectorAll(".card__delete-button");
 const addCardButton = document.querySelector("#add-card-button");
 const addCardModal = document.querySelector("#add-card-modal");
 const previewImageModal = document.querySelector("#preview-image-modal");
@@ -144,6 +143,7 @@ function handleAddCardFormSubmit(e) {
   const name = addCardTitleInput.value;
   const link = addCardUrlInput.value;
   renderCard({ name, link }, cardListEl);
+  e.target.reset();
   closeModal(addCardModal);
 }
 
@@ -155,12 +155,11 @@ function handleEsc(e) {
   }
 }
 
-addCardButton.addEventListener("click", () => openModal(addCardModal));
-
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
 
+addCardButton.addEventListener("click", () => openModal(addCardModal));
 profileEditForm.addEventListener("submit", handleProfileEditFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
@@ -171,13 +170,3 @@ profileEditButton.addEventListener("click", () => {
 });
 
 initialCards.forEach((data) => renderCard(data, cardListEl));
-//const likeButtons = document.querySelectorAll(".card__like-button");
-
-// The link input in not correctly validated. I can type numbers there but it should be only a link https://disk.yandex.ru/i/ezCiM4j85wEBUg
-// The image modal should not close when clicked inside it
-// See here https://disk.yandex.ru/i/3gtjt0oKTZBLZg please, make the modals match the design on 320px screens
-// The cards are initially liked but the heart should be white when I add cards
-// If a variable doesn’t change (is not reassigned), it is declared using const.
-// Every tag img should have an informative attribute alt (the name of the image is usually there) to show the alternative text if the image is not uploaded and it’s needed for screen readers
-// You should clear the inputs after a successful adding of a new card to let the user add the 2nd card again without having to remove the old data manually.
-// Every variable in the project should be in camelCase
