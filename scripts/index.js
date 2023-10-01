@@ -32,7 +32,10 @@ const cardTemplate = document
 const modals = [...document.querySelectorAll(".modal")];
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (e) => {
-    if (e.target.classList.contains("modal")) {
+    if (
+      e.target.classList.contains("modal") ||
+      e.target.classList.contains("modal__close")
+    ) {
       closeModal(modal);
     }
   });
@@ -49,7 +52,7 @@ const profileModalClosedButton = profileEditModal.querySelector(
 /* -------------------------------------------------------------------------- */
 /*                               Add Card Button                              */
 /* -------------------------------------------------------------------------- */
-const deleteButtons = document.querySelectorAll(".card__delete-button");
+// const deleteButtons = document.querySelectorAll(".card__delete-button");
 const addCardButton = document.querySelector("#add-card-button");
 const addCardModal = document.querySelector("#add-card-modal");
 const previewImageModal = document.querySelector("#preview-image-modal");
@@ -107,12 +110,9 @@ function getCardElement(data) {
   });
   cardImageEl.addEventListener("click", () => {
     previewImageModalImg.src = data.link;
+    previewImageModalImg.alt = data.name;
     previewModalHeading.textContent = cardTitleEl.textContent;
     openModal(previewImageModal);
-  });
-
-  previewImageModal.addEventListener("click", () => {
-    closeModal(previewImageModal);
   });
 
   cardImageEl.src = data.link;
@@ -146,18 +146,16 @@ function handleAddCardFormSubmit(e) {
   renderCard({ name, link }, cardListEl);
   closeModal(addCardModal);
 }
-function handlepreviewImage(e) {
-  e.preventDefault();
-  closeModal(previewImageModal);
-}
 
-function handleEsc(evt) {
-  if (evt.key === "Escape") {
+function handleEsc(e) {
+  if (e.key === "Escape") {
     const openedModal = document.querySelector(".modal_opened");
     closeModal(openedModal);
-    console.log(evt);
+    console.log(e);
   }
 }
+
+addCardButton.addEventListener("click", () => openModal(addCardModal));
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
@@ -172,14 +170,14 @@ profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 
-profileModalClosedButton.addEventListener("click", () =>
-  closeModal(profileEditModal)
-);
-
-addCardButton.addEventListener("click", () => openModal(addCardModal));
-addCardModalClosedButton.addEventListener("click", () =>
-  closeModal(addCardModal)
-);
-
 initialCards.forEach((data) => renderCard(data, cardListEl));
-const likeButtons = document.querySelectorAll(".card__like-button");
+//const likeButtons = document.querySelectorAll(".card__like-button");
+
+// The link input in not correctly validated. I can type numbers there but it should be only a link https://disk.yandex.ru/i/ezCiM4j85wEBUg
+// The image modal should not close when clicked inside it
+// See here https://disk.yandex.ru/i/3gtjt0oKTZBLZg please, make the modals match the design on 320px screens
+// The cards are initially liked but the heart should be white when I add cards
+// If a variable doesn’t change (is not reassigned), it is declared using const.
+// Every tag img should have an informative attribute alt (the name of the image is usually there) to show the alternative text if the image is not uploaded and it’s needed for screen readers
+// You should clear the inputs after a successful adding of a new card to let the user add the 2nd card again without having to remove the old data manually.
+// Every variable in the project should be in camelCase

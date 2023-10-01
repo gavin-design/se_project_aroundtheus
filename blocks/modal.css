@@ -141,6 +141,7 @@
 
 @media screen and (max-width: 630px) {
   .modal__save-button {
+    padding: 0;
     max-width: 238px;
     font-size: 14px;
     height: 46px;
@@ -167,7 +168,7 @@
 }
 @media screen and (max-width: 320px) {
   .modal__container {
-    width: 240px;
+    width: 280px;
     height: 75vh;
     flex-shrink: 0;
   }
