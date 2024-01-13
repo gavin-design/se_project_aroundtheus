@@ -79,7 +79,7 @@
           id="add-card-modal-closed-button"
         ></button>
         <p class="modal__heading">New Place</p>
-        <form class="modal__form" name="add-card-edit-form">
+        <form class="modal__form" name="add-card-edit-form" id="add-card-form">
           <input
             type="text"
             class="modal__input modal__input_type_name"
@@ -107,14 +107,13 @@
           <button
             type="submit"
             class="modal__save-button modal__save-button-disabled"
-            disabled
           >
             Create
           </button>
         </form>
       </div>
     </div>
-    <!--Profile-Edtit-Modal-->
+    <!--Profile-Edit-Modal-->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button
@@ -123,7 +122,11 @@
           id="profile-modal-closed-button"
         ></button>
         <p class="modal__heading">Edit Profile</p>
-        <form class="modal__form" name="profile-edit-form">
+        <form
+          class="modal__form"
+          name="profile-edit-form"
+          id="profile-edit-form"
+        >
           <input
             type="text"
             class="modal__input"
@@ -174,5 +177,6 @@
       </li>
     </template>
     <script src="./pages/index.js" type="module"></script>
+    <script src="./components/FormValidator.js" type="module"></script>
   </body>
 </html>
