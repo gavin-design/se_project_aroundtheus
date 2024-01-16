@@ -1,5 +1,6 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+
 const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
@@ -9,14 +10,18 @@ const settings = {
   errorClass: "modal__input-type-visable-error",
 };
 
-const addCardFormEl = document.querySelector("#add-card-form");
-const editProfileFormEl = document.querySelector("#profile-edit-form");
+const addCardFormEl = document.forms["add-card-edit-form"];
+const editProfileFormEl = document.forms["profile-edit-form"];
+const addCardTitleInput = addCardFormEl.querySelector("#add-card-title-input");
+
+const addCardUrlInput = addCardFormEl.querySelector(".modal__input_type_url");
 
 const addCardFormValidator = new FormValidator(settings, addCardFormEl);
 addCardFormValidator.enableValidation();
 
 const editProfileFormValidator = new FormValidator(settings, editProfileFormEl);
 editProfileFormValidator.enableValidation();
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -95,14 +100,6 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const profileEditForm = document.forms["profile-edit-form"];
-const addCardFormElement = document.forms["add-card-edit-form"];
-const addCardTitleInput = addCardFormElement.querySelector(
-  ".modal__input_type_name"
-);
-const addCardUrlInput = addCardFormElement.querySelector(
-  ".modal__input_type_url"
-);
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -116,26 +113,6 @@ function closeModal(modal) {
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEsc);
-}
-
-function getCardElement(data) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  const deleteButton = cardElement.querySelector(".card__delete-button");
-  const likeButton = cardElement.querySelector(".card__like-button");
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button-active");
-  });
-  deleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-  cardImageEl.addEventListener("click", () => {});
-
-  cardImageEl.src = data.link;
-  cardImageEl.alt = data.name;
-  cardTitleEl.textContent = data.name;
-  return cardElement;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -160,8 +137,9 @@ function handleAddCardFormSubmit(e) {
   const name = addCardTitleInput.value;
   const link = addCardUrlInput.value;
   generateCard({ name, link });
-  e.target.reset();
   closeModal(addCardModal);
+  e.target.reset();
+  addCardFormValidator.resetValidation();
 }
 
 function handleEsc(e) {
@@ -177,12 +155,13 @@ function handleEsc(e) {
 /* -------------------------------------------------------------------------- */
 
 addCardButton.addEventListener("click", () => openModal(addCardModal));
-profileEditForm.addEventListener("submit", handleProfileEditFormSubmit);
-addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
+editProfileFormEl.addEventListener("submit", handleProfileEditFormSubmit);
+addCardFormEl.addEventListener("submit", handleAddCardFormSubmit);
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent.trim();
   profileDescriptionInput.value = profileDescription.textContent.trim();
+  editProfileFormValidator.resetValidation();
   openModal(profileEditModal);
 });
 
