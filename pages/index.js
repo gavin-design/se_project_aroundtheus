@@ -1,5 +1,7 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+import ModalWithForm from "../components/ModalWithForm.js";
+// import initialCards from "../utils/constants.js";
 
 const settings = {
   formSelector: ".modal__form",
@@ -21,6 +23,15 @@ addCardFormValidator.enableValidation();
 
 const editProfileFormValidator = new FormValidator(settings, editProfileFormEl);
 editProfileFormValidator.enableValidation();
+
+const editProfileForm = new ModalWithForm("#profile-edit-modal", () => {});
+editProfileForm.setEventListeners();
+
+const editAddCardForm = new ModalWithForm("#add-card-modal", () => {});
+editAddCardForm.setEventListeners();
+// The index.js file must contain only the code for selecting elements, creating class instances,
+// and adding specific event listeners. Other code, such as the array of initial cards and any configuration objects you are using,
+//should be moved to a separate utils/constants.js file and imported into index.js.
 
 const initialCards = [
   {
@@ -155,8 +166,8 @@ function handleEsc(e) {
 /* -------------------------------------------------------------------------- */
 
 addCardButton.addEventListener("click", () => openModal(addCardModal));
-editProfileFormEl.addEventListener("submit", handleProfileEditFormSubmit);
-addCardFormEl.addEventListener("submit", handleAddCardFormSubmit);
+// editProfileFormEl.addEventListener("submit", handleProfileEditFormSubmit);
+// addCardFormEl.addEventListener("submit", handleAddCardFormSubmit);
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent.trim();
@@ -164,6 +175,12 @@ profileEditButton.addEventListener("click", () => {
   editProfileFormValidator.resetValidation();
   openModal(profileEditModal);
 });
+
+const newCardModal = new ModalWithForm("#add-card-modal", () => {});
+
+newCardModal.openModal();
+
+newCardModal.closeModal();
 
 const generateCard = (data) => {
   const card = new Card(data, "#card-template", (name, link) => {
