@@ -14,14 +14,13 @@
       content=" places that must be visited in the uninted states"
     />
     <title>Around The US</title>
-    <link href="./pages/index.css" rel="stylesheet" />
   </head>
 
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
         <img
-          src="./images/aroundtheus-logo.svg"
+          src="<%=require('./images/aroundtheus-logo.svg')%>"
           class="header__logo"
           alt="Around the U.S. Logo"
         />
@@ -30,7 +29,7 @@
       <main class="content">
         <section class="profile page__section">
           <img
-            src="./images/jacques-cousteau.jpg"
+            src="<%=require('./images/jacques-cousteau.jpg')%>"
             alt="jacques card__description"
             class="profile__image"
           />
@@ -178,7 +177,5 @@
         </div>
       </li>
     </template>
-    <script src="./pages/index.js" type="module"></script>
-    <script src="./components/FormValidator.js" type="module"></script>
   </body>
 </html>

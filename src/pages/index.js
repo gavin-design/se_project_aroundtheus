@@ -6,6 +6,7 @@ import UserInfo from "../components/UserInfo.js";
 import initialCards from "../utils/initialCards.js";
 import Section from "../components/Section.js";
 import modal from "../components/Modal.js";
+import "../pages/index.css";
 
 modal.onCreateModal = (modal) => {
   modal._modalElement.addEventListener("mousedown", (e) => {
