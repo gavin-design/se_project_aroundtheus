@@ -45,6 +45,10 @@ class FormValidator {
     );
     this._submitButton.disabled = hasInvalidInputResult;
   }
+getInputEls(){
+  return this._inputEls
+  
+}
 
   setEventListeners() {
     this._inputEls.forEach((inputEl) => {

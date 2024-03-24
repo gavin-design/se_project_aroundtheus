@@ -1,7 +1,6 @@
-import modal from "./Modal.js";
-export default class ModalWithImage extends modal.Modal {
+import Modal from "./Modal.js";
+export default class ModalWithImage extends Modal {
   constructor(modalSelector, name, link) {
-    console.log(modalSelector)
     super(modalSelector);
     this._name = name;
     this._link = link;
@@ -12,9 +11,10 @@ export default class ModalWithImage extends modal.Modal {
     previewModalHeading.textContent = name;
   }
 
-  openModal(data) {
-    this._data = data;
-    super.openModal();
+  open(name, link) {
+    this._name = name;
+    this._link = link;
+    super.open();
 
 
 
