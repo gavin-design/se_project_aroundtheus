@@ -1,19 +1,19 @@
 import Modal from "./Modal.js";
 export default class ModalWithImage extends Modal {
-  constructor(modalSelector, name, link) {
+  constructor(modalSelector, options) {
     super(modalSelector);
-    this._name = name;
-    this._link = link;
+    this._name = options.name;
+    this._link = options.link;
     const previewImageModalImg = this._modalElement.querySelector(".modal__card-image");
-    previewImageModalImg.src = link;
-    previewImageModalImg.alt = name;
+    previewImageModalImg.src = options.link;
+    previewImageModalImg.alt = options.name;
     const previewModalHeading = this._modalElement.querySelector(".modal__preview-heading");
-    previewModalHeading.textContent = name;
+    previewModalHeading.textContent = options.name;
   }
 
-  open(name, link) {
-    this._name = name;
-    this._link = link;
+  open(options) {
+    this._name = options.name;
+    this._link = options.link;
     super.open();
 
 
