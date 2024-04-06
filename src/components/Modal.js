@@ -2,17 +2,8 @@
 class Modal {
   constructor(modalSelector) {
     this._modalElement = document.querySelector(modalSelector); 
-    this._modalElement.addEventListener("mousedown", (e) => {
-    if (
-      e.target.classList.contains("modal") ||
-      e.target.classList.contains("modal__close")
-     ) {
-      this.close();
-    }
-  });
-  document.addEventListener("keydown",  (e) => {
-    this._handleEscClose(e)
-  })
+    //this.setEventListeners()
+  
    
   }
 
@@ -32,6 +23,18 @@ class Modal {
     }
   }
 
-  setEventListeners() {}
+  setEventListeners() {
+    document.addEventListener("keydown",  (e) => {
+      this._handleEscClose(e)
+    })
+    this._modalElement.addEventListener("mousedown", (e) => {
+      if (
+        e.target.classList.contains("modal") ||
+        e.target.classList.contains("modal__close")
+       ) {
+        this.close();
+      }
+    });
+  }
 }
 export default Modal;

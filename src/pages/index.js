@@ -73,16 +73,16 @@ const section = new Section(
 
   function (card) {
     console.log(card)
-    //cardListEl.prepend(card);
+    //
   },
   ".cards__list"
 )
 
 function generateCard(options) {
-  const card = new Card(options, "#card-template", (options) => {
+  const card = new Card(options, "#card-template", () => {
     const preview = new ModalWithImage("#preview-image-modal", options);
     preview.open();
-
+// can i have clarification opening and closing ModalImages in a more efficient manner
   });
   section.addItem(card.getView());
 }

@@ -6,7 +6,7 @@ export default class ModalWithForm extends Modal {
     this._modalForm = this._modalElement.querySelector(".modal__form");
     this._formValidator = formValidator;
     this._handleSubmit = handleSubmit;
-    this.setEventListeners()
+   this.setEventListeners()
     
   }
 
@@ -25,7 +25,9 @@ _getInputValues() {
   }
 
   setEventListeners() {
-    super.setEventListeners();
+    console.log(this._modalForm)
+    console.log(this._modalElement)
+   super.setEventListeners();
     
 
     this._modalForm.addEventListener("submit", (e) => {

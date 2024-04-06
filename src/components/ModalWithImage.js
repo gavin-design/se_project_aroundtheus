@@ -9,11 +9,10 @@ export default class ModalWithImage extends Modal {
     previewImageModalImg.alt = options.name;
     const previewModalHeading = this._modalElement.querySelector(".modal__preview-heading");
     previewModalHeading.textContent = options.name;
+    this.setEventListeners()
   }
 
-  open(options) {
-    this._name = options.name;
-    this._link = options.link;
+  open() {
     super.open();
 
 
