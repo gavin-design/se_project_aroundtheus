@@ -6,11 +6,11 @@ export default class Section {
   }
 
   addItem(item) {
-    this._container.append(item);
+    this._container.prepend(item);
   }
 
   renderItem(item) {
-    this._container.append(item);
+    this._container.prepend(item);
   }
 //const cardListEl = document.querySelector(".cards__list");
  //cardListEl.prepend(card);  

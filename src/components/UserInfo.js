@@ -5,7 +5,7 @@ export default class UserInfo {
 
     }
     getUserInfo() {
-        return [this.title.textContent, this.description.textContent]
+        return {title:this.title.textContent, description:this.description.textContent}
     }
     setUserInfo(title, decription) {
         this.title.textContent = title;

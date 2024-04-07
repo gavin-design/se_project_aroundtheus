@@ -33,9 +33,8 @@ const editProfileModal = new ModalWithForm(
   "#profile-edit-modal",
   editProfileFormValidator, 
   
-  function (options) {
-    console.log(options.title, options.description)
-    userInfo.setUserInfo(options.title, options.description)
+  function () {
+    editProfileFormValidator.toggleButtonState()
     editProfileModal.close();
   
   }
@@ -45,7 +44,6 @@ editProfileButton.addEventListener("click", () => {
   const options = userInfo.getUserInfo();
   profileTitleInput.value = options.title;
   profileDescriptionInput.value = options.description;
-
   editProfileFormValidator.resetValidation();
   editProfileModal.open();
 });
@@ -54,16 +52,18 @@ const addCardButton = document.querySelector("#add-card-button");
 const addCardModal = new ModalWithForm("#add-card-modal", addCardFormValidator, function (options) {
   generateCard(options);
   addCardModal.close();
- 
 });
 
-addCardButton.addEventListener("click", () => addCardModal.open());
+addCardButton.addEventListener("click", () => {
+  addCardModal.open()
+  addCardFormValidator.toggleButtonState()
+
+});
 
 /* -------------------------------------------------------------------------- */
 /*                               Add Card Button                              */
 /* -------------------------------------------------------------------------- */
 
-//const cardListEl = document.querySelector(".cards__list");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
@@ -71,9 +71,7 @@ const profileDescriptionInput = document.querySelector(
 
 const section = new Section(
 
-  function (card) {
-    console.log(card)
-    //
+  function () {
   },
   ".cards__list"
 )
@@ -82,7 +80,6 @@ function generateCard(options) {
   const card = new Card(options, "#card-template", () => {
     const preview = new ModalWithImage("#preview-image-modal", options);
     preview.open();
-// can i have clarification opening and closing ModalImages in a more efficient manner
   });
   section.addItem(card.getView());
 }

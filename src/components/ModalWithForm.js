@@ -34,7 +34,7 @@ _getInputValues() {
       const inputValues = this._getInputValues();
       this._handleSubmit(inputValues);
      this._modalForm.reset();
-    this._formValidator.toggleButtonState();
+    //this._formValidator.toggleButtonState();
     });
   }
 }
