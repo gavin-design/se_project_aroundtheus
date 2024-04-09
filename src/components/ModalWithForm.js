@@ -15,12 +15,11 @@ export default class ModalWithForm extends Modal {
 
 _getInputValues() {
   const values = {}
-    const inputEls = this._formValidator.getInputEls();
+    const inputEls = this._modalForm;
     for (let i = 0 ; i< inputEls.length; ++i) {
-      console.log(inputEls[i].name)
       values[inputEls[i].name] = inputEls[i].value
-    
     }
+    console.log(values)
     return values
   }
 

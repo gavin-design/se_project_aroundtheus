@@ -9,12 +9,15 @@ class Modal {
 
   open() {
     this._modalElement.classList.add("modal_opened");
-    document.addEventListener("keydown", this._handleEscClose);
+    this._callBack = (e) => {
+         this._handleEscClose(e)
+      }
+    document.addEventListener("keydown", this._callBack );
   }
 
   close() {
     this._modalElement.classList.remove("modal_opened");
-    document.removeEventListener("keydown", this._handleEscClose);
+    document.removeEventListener("keydown", this._callBack);
   }
 
   _handleEscClose(e) {
@@ -24,9 +27,6 @@ class Modal {
   }
 
   setEventListeners() {
-    document.addEventListener("keydown",  (e) => {
-      this._handleEscClose(e)
-    })
     this._modalElement.addEventListener("mousedown", (e) => {
       if (
         e.target.classList.contains("modal") ||

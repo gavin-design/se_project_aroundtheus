@@ -33,7 +33,8 @@ const editProfileModal = new ModalWithForm(
   "#profile-edit-modal",
   editProfileFormValidator, 
   
-  function () {
+  function (options) {
+    userInfo.setUserInfo(options)
     editProfileFormValidator.toggleButtonState()
     editProfileModal.close();
   
@@ -79,13 +80,11 @@ const section = new Section(
 function generateCard(options) {
   const card = new Card(options, "#card-template", () => {
     const preview = new ModalWithImage("#preview-image-modal", options);
-    preview.open();
+    preview.open(options);
   });
-  section.addItem(card.getView());
+  section.renderItem(card.getView());
 }
 
 constants.initialCards.forEach((options) => {
   generateCard(options)
 });
-
-section.renderItems()
