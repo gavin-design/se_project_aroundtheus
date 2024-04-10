@@ -31,7 +31,6 @@ const editProfileButton = document.querySelector("#profile-edit-button");
 
 const editProfileModal = new ModalWithForm(
   "#profile-edit-modal",
-  editProfileFormValidator, 
   
   function (options) {
     userInfo.setUserInfo(options)
@@ -49,9 +48,21 @@ editProfileButton.addEventListener("click", () => {
   editProfileModal.open();
 });
 
+const section = new Section(
+  constants.initialCards,
+    function (options) {
+      const card = new Card(options, "#card-template", () => {
+        const preview = new ModalWithImage("#preview-image-modal", options);
+        preview.open(options);
+      });
+     this.addItem(card.getView());
+    },
+    ".cards__list"
+  )
+
 const addCardButton = document.querySelector("#add-card-button");
-const addCardModal = new ModalWithForm("#add-card-modal", addCardFormValidator, function (options) {
-  generateCard(options);
+const addCardModal = new ModalWithForm("#add-card-modal", function (options) {
+  section.renderItem(options);
   addCardModal.close();
 });
 
@@ -70,21 +81,5 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 
-const section = new Section(
 
-  function () {
-  },
-  ".cards__list"
-)
-
-function generateCard(options) {
-  const card = new Card(options, "#card-template", () => {
-    const preview = new ModalWithImage("#preview-image-modal", options);
-    preview.open(options);
-  });
-  section.renderItem(card.getView());
-}
-
-constants.initialCards.forEach((options) => {
-  generateCard(options)
-});
+ 
