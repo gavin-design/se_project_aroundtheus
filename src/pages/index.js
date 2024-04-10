@@ -36,8 +36,7 @@ const editProfileModal = new ModalWithForm(
     userInfo.setUserInfo(options)
     editProfileFormValidator.toggleButtonState()
     editProfileModal.close();
-  
-  }
+   }
 );
 
 editProfileButton.addEventListener("click", () => {
@@ -48,11 +47,12 @@ editProfileButton.addEventListener("click", () => {
   editProfileModal.open();
 });
 
+const preview = new ModalWithImage("#preview-image-modal");
+
 const section = new Section(
   constants.initialCards,
     function (options) {
       const card = new Card(options, "#card-template", () => {
-        const preview = new ModalWithImage("#preview-image-modal", options);
         preview.open(options);
       });
      this.addItem(card.getView());
