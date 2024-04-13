@@ -50,15 +50,20 @@ editProfileButton.addEventListener("click", () => {
 const preview = new ModalWithImage("#preview-image-modal");
 
 const section = new Section(
-  constants.initialCards,
-    function (options) {
+  
+ { 
+  items: constants.initialCards,
+    render: function (options)   {
       const card = new Card(options, "#card-template", () => {
         preview.open(options);
       });
-     this.addItem(card.getView());
+     section.addItem(card.getView());
     },
+  },
     ".cards__list"
-  )
+  );
+
+section.renderItems()
 
 const addCardButton = document.querySelector("#add-card-button");
 const addCardModal = new ModalWithForm("#add-card-modal", function (options) {
